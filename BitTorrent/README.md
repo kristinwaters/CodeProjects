@@ -1,6 +1,6 @@
 # BitTorrent Client/Server
 
-# Overview
+## Overview
 This program is a simplified implementation of the BitTorrent protocol.  This system allows a 
 user to add files to nodes, search for files, and download files.  It is written in the C 
 programming language and consists of the following four components:
@@ -15,7 +15,7 @@ under the assumption that there will always be one client process, one tracker p
 torrent store process, and four node processes present.
 
 
-# Component Description: Node
+## Component Description: Node
 The node is responsible for storing files and serving chunks of them when requested by the 
 client.  There are two structures defined in node.x.  These are "file_rqst_data" and "file."
 "file_rqst_data" contains information needed by the node to serve chunks of a file.  The "file"
@@ -38,7 +38,7 @@ also registers the file with the tracker.
 TRANSFER_FILE is responsible for sending pieces of a file to the requesting client.
 
 
-# Component Description: Tracker
+## Component Description: Tracker
 The tracker process is responsible for keeping track of which nodes are storing which file 
 within the distributed store.  It maintains a linked list of "file_data" structures.  Each 
 element in this list contains a filename, file size, the number of requests received for the 
@@ -74,7 +74,7 @@ file list is updated to indicate that the file is being hosted by an additional 
 file is not currently in the file list, then a new entry is added.
 
 
-# Component Description: Torrent Store
+## Component Description: Torrent Store
 The torrent store process keeps track of the torrent file for each file stored in the system.
 Each torrent file consists of the following format:
 
@@ -98,7 +98,7 @@ TRACKER_REGISTER is called by the tracker upon initialization.  This function ac
 tracker's hostname.
 
 
-# Component Description: Client
+## Component Description: Client
 The client process is used by the end user to add files, query files, and download files.  It is
 implemented as a command-line interface.  Upon startup, the following menu is displayed to the
 user:
